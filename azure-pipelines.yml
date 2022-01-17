@@ -30,4 +30,17 @@ jobs:
   - job: B
     steps:
     - bash: echo "B"
+  - job: C
+    steps:
+    - bash: echo "B"
+
+stages:
+- stage: A
+  jobs:
+  - job: A
+  - job: B
+
+- stage: B
+  jobs:
+  - job: C
     
